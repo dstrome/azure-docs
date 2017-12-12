@@ -4,7 +4,7 @@ description:  Turn on Application Proxy in the Azure classic portal, and install
 services: active-directory
 documentationcenter: ''
 author: kgremban
-manager: femila
+manager: mtillman
 
 ms.assetid: c7186f98-dd80-4910-92a4-a7b8ff6272b9
 ms.service: active-directory
@@ -91,4 +91,4 @@ If you want to uninstall the Connector, uninstall both the Connector service and
 ## Next steps
 You are now ready to [Publish applications with Application Proxy](active-directory-application-proxy-publish.md).
 
-If you have applications that are on separate networks or different locations, you can use connector groups to organize the different connectors into logical units. Learn more about [Working with Application Proxy connectors](active-directory-application-proxy-connectors.md).
+If you have applications that are on separate networks or different locations, you can use connector groups to organize the different connectors into logical units. Learn more about [Working with Application Proxy connectors](active-directory-application-proxy-connectors-azure-portal.md).

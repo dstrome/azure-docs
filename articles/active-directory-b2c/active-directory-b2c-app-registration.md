@@ -4,7 +4,7 @@ description: How to register your application with Azure Active Directory B2C
 services: active-directory-b2c
 documentationcenter: ''
 author: parakhj
-manager: krassk
+manager: mtillman
 editor: PatAltimore
 
 ms.assetid: 20e92275-b25d-45dd-9090-181a60c99f69
@@ -20,7 +20,7 @@ ms.author: parakhj
 ---
 # Azure Active Directory B2C: Register your application
 
-This Quickstart helps you register an application in a Microsoft Azure Active Directory (Azure AD) B2C tenant in a few minutes. When you're finished, your application is registered for use in the Azure B2C tenant.
+This Quickstart helps you register an application in a Microsoft Azure Active Directory (Azure AD) B2C tenant in a few minutes. When you're finished, your application is registered for use in the Azure AD B2C tenant.
 
 ## Prerequisites
 
@@ -47,6 +47,8 @@ Log in to the [Azure portal](https://portal.azure.com/) as the Global Administra
 ### Register a web app
 
 [!INCLUDE [active-directory-b2c-register-web-app](../../includes/active-directory-b2c-register-web-app.md)]
+
+### Create a web app client secret
 
 If your web application calls a web API secured by Azure AD B2C, perform these steps:
    1. Create an application secret by going to the **Keys** blade and clicking the **Generate Key** button. Make note of the **App key** value. You use the value as the application secret in your application's code.

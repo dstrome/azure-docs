@@ -1,7 +1,7 @@
 ---
 title: Java application development tutorial using Azure Cosmos DB | Microsoft Docs
-description: This Java web application tutorial shows you how to use the Azure Cosmos DB and the DocumentDB API to store and access data from a Java application hosted on Azure Websites.
-keywords: Application development, database tutorial, java application, java web application tutorial, documentdb, azure, Microsoft azure
+description: This Java web application tutorial shows you how to use the Azure Cosmos DB and the SQL API to store and access data from a Java application hosted on Azure Websites.
+keywords: Application development, database tutorial, java application, java web application tutorial, azure, Microsoft azure
 services: cosmos-db
 documentationcenter: java
 author: dennyglee
@@ -18,7 +18,7 @@ ms.date: 08/22/2017
 ms.author: denlee
 
 ---
-# Build a Java web application using Azure Cosmos DB and the DocumentDB API
+# Build a Java web application using Azure Cosmos DB and the SQL API
 > [!div class="op_single_selector"]
 > * [.NET](documentdb-dotnet-application.md)
 > * [Node.js](documentdb-nodejs-application.md)
@@ -26,6 +26,8 @@ ms.author: denlee
 > * [Python](documentdb-python-application.md)
 > 
 > 
+
+[!INCLUDE [cosmos-db-sql-api](../../includes/cosmos-db-sql-api.md)]
 
 This Java web application tutorial shows you how to use the [Microsoft Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/) service to store and access data from a Java application hosted on Azure App Service Web Apps. In this topic, you will learn:
 
@@ -50,7 +52,7 @@ Before you begin this application development tutorial, you must have the follow
 
 * [Java Development Kit (JDK) 7+](http://www.oracle.com/technetwork/java/javase/downloads/index.html).
 * [Eclipse IDE for Java EE Developers.](http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/lunasr1)
-* [An Azure Web Site with a Java runtime environment (e.g. Tomcat or Jetty) enabled.](../app-service-web/web-sites-java-get-started.md)
+* [An Azure Web Site with a Java runtime environment (e.g. Tomcat or Jetty) enabled.](../app-service/app-service-web-get-started-java.md)
 
 If you're installing these tools for the first time, coreservlets.com provides a walk-through of the installation process in the Quick Start section of their [Tutorial: Installing TomCat7 and Using it with Eclipse](http://www.coreservlets.com/Apache-Tomcat-Tutorial/tomcat-7-with-eclipse.html) article.
 
@@ -83,8 +85,8 @@ To create the JSP application:
    
     ![Hello World – Java Application Tutorial](./media/documentdb-java-application/image12.png)
 
-## <a id="InstallSDK"></a>Step 3: Install the DocumentDB Java SDK
-The easiest way to pull in the DocumentDB Java SDK and its dependencies is through [Apache Maven](http://maven.apache.org/).
+## <a id="InstallSDK"></a>Step 3: Install the SQL Java SDK
+The easiest way to pull in the SQL Java SDK and its dependencies is through [Apache Maven](http://maven.apache.org/).
 
 To do this, you will need to convert your project to a maven project by completing the following steps:
 
@@ -98,7 +100,7 @@ To do this, you will need to convert your project to a maven project by completi
    * In the **Artifact Id** box, enter azure-documentdb.
    * In the **Version** box, enter 1.5.1.
      
-   ![Install DocumentDB Java Application SDK](./media/documentdb-java-application/image13.png)
+   ![Install SQL Java Application SDK](./media/documentdb-java-application/image13.png)
      
    * Or add the dependency XML for Group Id and Artifact Id directly to the pom.xml via a text editor:
      
@@ -107,7 +109,7 @@ To do this, you will need to convert your project to a maven project by completi
             <artifactId>azure-documentdb</artifactId>
             <version>1.9.1</version>
         </dependency>
-6. Click **OK** and Maven will install the DocumentDB Java SDK.
+6. Click **OK** and Maven will install the SQL Java SDK.
 7. Save the pom.xml file.
 
 ## <a id="UseService"></a>Step 4: Using the Azure Cosmos DB service in a Java application
@@ -280,7 +282,7 @@ To do this, you will need to convert your project to a maven project by completi
                 return null;
             }
         }
-7. We can also use the DocumentClient to get a collection or list of TodoItems using DocumentDB SQL:
+7. We can also use the DocumentClient to get a collection or list of TodoItems using SQL:
    
         @Override
         public List<TodoItem> readTodoItems() {
@@ -725,7 +727,7 @@ Azure Web Sites makes deploying Java applications as simple as exporting your ap
    * In the Web project box, enter azure-documentdb-java-sample.
    * In the Destination box, choose a destination to save the WAR file.
    * Click **Finish**.
-3. Now that you have a WAR file in hand, you can simply upload it to your Azure Web Site's **webapps** directory. For instructions on uploading the file, see [Add a Java application to Azure App Service Web Apps](../app-service-web/web-sites-java-add-app.md).
+3. Now that you have a WAR file in hand, you can simply upload it to your Azure Web Site's **webapps** directory. For instructions on uploading the file, see [Add a Java application to Azure App Service Web Apps](../app-service/web-sites-java-add-app.md).
    
     Once the WAR file is uploaded to the webapps directory, the runtime environment will detect that you've added it and will automatically load it.
 4. To view your finished product, navigate to http://YOUR\_SITE\_NAME.azurewebsites.net/azure-java-sample/ and start adding your tasks!
